@@ -1,0 +1,57 @@
+1. Получить список всех книг
+
+fetch('http://localhost:3333/books')
+  .then(response => response.json())
+  .then(data => console.log('Список книг:', data))
+  .catch(error => console.error('Ошибка:', error));
+
+
+---
+
+2. Добавить новую книгу
+
+fetch('http://localhost:3333/books', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    year: 1925,
+  }),
+})
+  .then(response => response.json())
+  .then(data => console.log('Добавлено:', data))
+  .catch(error => console.error('Ошибка:', error));
+
+
+---
+
+3. Обновить id == ID книги
+
+fetch('http://localhost:3333/books/1', { 
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    title: 'Updated Title',
+    author: 'Updated Author',
+    year: 2024,
+  }),
+})
+  .then(response => response.json())
+  .then(data => console.log('Обновлено:', data))
+  .catch(error => console.error('Ошибка:', error));
+
+
+---
+
+4. Удалить :id == ID книги
+
+fetch('http://localhost:3333/books/1', { 
+  method: 'DELETE',
+})
+  .then(() => console.log('Книга удалена'))
+  .catch(error => console.error('Ошибка:', error));

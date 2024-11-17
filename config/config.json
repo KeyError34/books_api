@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "root",
+    "password": "666777",
+    "database": "app_books",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+
+}

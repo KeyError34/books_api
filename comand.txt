@@ -1,0 +1,48 @@
+npm i sequelize sequelize-cli mysql2 exspress dotenv cors
+
+`sequelize` — ORM для взаимодействия с базой данных.
+
+`sequelize-cli` — инструмент командной строки для управления миграциями и моделями.
+
+`mysql2` — драйвер для работы с MySQL.
+
+////////////////////////////////
+
+npx sequelize-cli init  // i defolt dir
+
+config
+migrations
+models
+seeders
+////////////////////////////
+
+create database database_test;
+create database database_dev;
+create database database_production;
+
+
+///////////
+npx sequelize-cli migration:generate --name create-users
+npx sequelize-cli migration:migrate --name create-users
+
+////////////////
+
+npx sequelize-cli db:migrate // create columns
+
+автоматическое сравнивание в sequelize какие уже 
+были применены и что нужно внести 
+
+///////////////////////
+
+npx sequelize-cli db:migrate:undo // смотрит на последнюю миграцию, 
+                                  // записанную в таблице SequelizeMeta, 
+                                  // и отменяет её. Запись об этой миграции 
+                                  // удаляется из таблицы SequelizeMeta.
+
+npx sequelize-cli db:migrate:undo:all // отменить все миграции.
+
+bcryptjs: для хеширования паролей.
+
+jsonwebtoken: для работы с JWT токенами.
+
+multer: для загрузки файлов (например, приложений).
